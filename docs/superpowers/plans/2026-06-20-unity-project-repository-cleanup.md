@@ -63,9 +63,9 @@ Expected: `git status --short` displays only `A` entries beneath these paths.
 
 - [ ] **Step 3: Validate Unity metadata pairing and staging scope**
 
-Run: `git diff --cached --check; git diff --cached --name-only`
+Run: `git diff --cached --name-only; git diff --cached --check`
 
-Expected: No whitespace errors; staged paths are limited to the listed environment and tree asset groups, including their `.meta` files.
+Expected: Staged paths are limited to the listed environment and tree asset groups, including their `.meta` files. Unity-generated YAML may report trailing whitespace; retain it because altering serialized prefab or `.meta` text solely for whitespace cleanup can change imported asset content.
 
 - [ ] **Step 4: Commit the required game assets**
 
